@@ -1,0 +1,154 @@
+#Added FINAL PROJECT.html file
+<html>
+
+<head>
+    <style>
+        #container {
+            border: 3px solid gray;
+            background-color: antiquewhite;
+            width: 414px;
+            height: 550px;
+            margin-left: 35%;
+            box-shadow: 10px 14px 5px 0px gray;
+
+        }
+
+        #top {
+            background-color: #070224;
+            color: white;
+            height: 200px;
+            padding-top: 1px;
+
+        }
+
+        #input-el {
+            background-color: #070224;
+            border: 2px solid white;
+            margin-top: 10px;
+            margin-left: 137px;
+            height: 52px;
+            width: 69px;
+            color: white;
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+
+
+        }
+
+        #button-el {
+            margin-left: 135px;
+            margin-top: 13px;
+            cursor: pointer;
+            background-color: white;
+            border-radius: 4px;
+            height: 29px;
+            width: 74px;
+            color: rgb(44, 3, 44);
+            border: none;
+
+
+
+        }
+
+        #length-el {
+
+            border: 2px solid white;
+            background-color: white;
+            width: 360px;
+            display: block;
+            margin-left: 20px;
+            height: 71px;
+            margin-top: 24px;
+
+        }
+
+        #volume-el {
+            border: 2px solid white;
+            background-color: white;
+            width: 360px;
+            display: block;
+            margin-left: 20px;
+            height: 71px;
+            margin-top: 24px;
+        }
+
+        #mass-el {
+            border: 2px solid white;
+            background-color: white;
+            width: 360px;
+            display: block;
+            margin-left: 20px;
+            height: 71px;
+            margin-top: 24px;
+
+        }
+
+      
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="top">
+            <h3 style="margin-left: 40px; ">Metric/Imperial Unit Convertor</h3>
+            <input id="input-el" type="text"><br>
+            <button id="button-el" onclick="function1()">Convert</button><br>
+        </div>
+        <div id="bottom">
+            <length id="length-el">Length (Meter/Feet)<br><br>
+                <div id="lengthdom">
+
+                </div>
+            </length><br>
+            <volume id="volume-el">Volume(Liters/Gallons)<br><br>
+                <div id="volumedom">
+
+                </div>
+            </volume><br>
+            <mass id="mass-el">Mass(Kilogram/Pounds)<br><br>
+                <div id="massdom">
+
+                </div>
+            </mass><br>
+        </div>
+    </div>
+    <script>
+        let inputEl = document.getElementById("input-el")
+        let lengthEl = document.getElementById("lengthdom")
+        let volumeEl = document.getElementById("volumedom")
+        let massEl = document.getElementById("massdom")
+
+
+        function function1() {
+            let num = inputEl.value
+            let meters = (num * 0.3048).toFixed(2)
+            // print out 1f= meters here
+            let feet = (num * 3.28084).toFixed(2)
+            // print out 1meters=f
+            lengthEl.textContent = num + "feets  = " + meters + "meters | " + num + "meters  = " + feet + "feets"
+
+            let liters = (num * 3.78541).toFixed(2)
+            let gallons = (num * 0.264172).toFixed(2)
+            volumeEl.textContent = num + "gallons = " + liters + "litters |" + num + "litters = " + gallons + "gallons"
+
+            let kg = (num * 0.453592).toFixed(2)
+            let pound = (num * 2.20462).toFixed(2)
+            massEl.textContent = num + "kg =  " + pound + "pounds  | " + num + "pounds = " + kg + "kg"
+            inputEl.value = "";
+
+        }
+
+// 1 meter = 3.281 feet
+// 1 liter = 0.264 gallon
+// 1 kilogram = 2.204 pound
+
+    </script>
+
+
+
+</body>
+
+</html>
